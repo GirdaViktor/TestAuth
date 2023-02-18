@@ -2,9 +2,9 @@ import axios from "axios";
 
 const axiosCreate = axios.create({
   withCredentials: true,
-  baseUrl: 'fakeUrl',
-  headers: {
-    "API-KEY": "ac70a3ee-d73f-4b96-a02e-68eb1be84bef"
+  baseURL: 'https://social-network.samuraijs.com/api/1.0/',
+  headers:     {
+    "API-KEY": "b1775b2f-c3a5-4509-8dc9-90b5629de7c3"
   }
 });
 
@@ -13,10 +13,6 @@ export const authAPI = {
     return axiosCreate.get(`auth/me`);
   },
   login(email, password, rememberMe = false) {
-    return axiosCreate.post(`auth/login`, {
-      email,
-      password,
-      rememberMe
-    })
+    return axiosCreate.post(`auth/login`, { email, password, rememberMe });
   },
 };

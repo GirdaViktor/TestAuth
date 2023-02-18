@@ -2,7 +2,7 @@ import {authAPI} from "../../api/api";
 
 const SET_USER_DATA = 'SET_USER_DATA';
 
-const initialState = {
+let initialState = {
   userId: null,
   email: null,
   login: null,
@@ -14,23 +14,16 @@ const authReducer = (state = initialState, action) => {
     case SET_USER_DATA:
       return {
         ...state,
-        ...action.payload,
-        isAuth: true
+        ...action.payload
       };
 
-    default:
-      return state;
-  }
+      default:
+        return state;
+    }
 };
 
-export const setUserData = (userId, email, login, isAuth) => ({
-  type: SET_USER_DATA,
-  payload: {
-    userId,
-    email,
-    login,
-    isAuth
-  }
+export const setUserData = (userId, email, login, isAuth) => ({type: SET_USER_DATA, payload:
+  {userId, email, login, isAuth}
 });
 
 export const getAuthUserData = () => (dispatch) => {

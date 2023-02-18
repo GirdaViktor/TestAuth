@@ -19,7 +19,9 @@
     "redux-form": "^8.3.9",
     "sass": "^1.58.1",
     "scss": "^0.2.4",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "redux-thunk": "latest",
+    "react-router": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
